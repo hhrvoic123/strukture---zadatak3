@@ -9,7 +9,9 @@ int br_el=0;
 bool provjera(tpacijent &generirani){
 switch (generirani.ci){ 
 	case 1: 
-	if(generirani.ei==1) return false;
+	if(generirani.ei==1) return false; 
+	if(generirani.di==3) return false;
+	if(generirani.di==4) return false;
 	case 3: 
 	if(generirani.ei==4) return false; 
 	case 4: 
@@ -115,10 +117,12 @@ void unesi_pacijente(queue *generirani, queue *Q){
 		novi.prezime[7]='\0';		
 		novi.datum.dan=rand()%31+1;	
 		novi.datum.mjesec=rand()%12+1;
-		if(novi.ci==4) 
+		if(novi.ci==4) //za djecu mladju od 6 godina ide posebni datum
 			novi.datum.godina=2013-rand()%6;
-		else
-		novi.datum.godina=1970+rand()%44;
+		else {
+		if(novi.ci==3)novi.datum.godina=1970+rand()%29;
+	    else novi.datum.godina=1970+rand()%37; 
+		}
 		novi.spol=(rand()%2)? 'm' : 'z';	
 		br_el++;
 		enqueueQ(novi,Q);
