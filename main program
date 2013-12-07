@@ -9,14 +9,14 @@ int br_el=0;
 bool provjera(tpacijent &generirani){
 switch (generirani.ci){ 
 	case 1: 
-	if(generirani.ei==1) return false; 
-	if(generirani.di==3) return false;
-	if(generirani.di==4) return false;
+	if(generirani.ei==1||generirani.di==3||generirani.di==4) return false; 
+	break;
 	case 3: 
 	if(generirani.ei==4) return false; 
+	break;
 	case 4: 
-	if(generirani.ei==4) return false;
-	if(generirani.ei==5) return false;
+	if(generirani.ei==4||generirani.ei==5) return false;
+	break;
 }
 return true;
 }
