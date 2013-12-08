@@ -205,7 +205,7 @@ void red_brzih_usluga(queue *Q){
 	cout<<"Stanje brzog reda:\n---------------------"<<endl;
 	red_prioritet(brzi);
 	ispis_svih(brzi);
-	cout<<"Stanje glavnog reda nakon izbacivanja 30% zadnjih :\n-------------------"<<endl;
+	cout<<"Stanje glavnog reda nakon prebacivanja pacijenata u brzi red :\n-------------------"<<endl;
 	red_obrnuto(Q);
 	ispis_svih(Q);
 	delete brzi;
